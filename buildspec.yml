@@ -22,4 +22,4 @@ phases:
       - printf '[{"name":"your.task.definition.container.name","imageUri":"%s"}]' 232048837608.dkr.ecr.us-east-1.amazonaws.com/adex-ecr:latest > imagedefinitions.json
 
   artifacts:
-  files: imagedefinitions.json
+    files: imagedefinitions.json
