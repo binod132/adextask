@@ -10,7 +10,8 @@ def fetchDetails():
 
 @app.route("/")
 def hello_world():
-    return "<p>lets go 2 puntey only!!!!</p>"
+##    return "<p>lets go 2 puntey only!!!!</p>"
+      return render_template('home.html')
 
 @app.route("/health")
 def health():
