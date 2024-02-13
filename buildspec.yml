@@ -19,3 +19,7 @@ phases:
       - docker tag adex-ecr:latest 232048837608.dkr.ecr.us-east-1.amazonaws.com/adex-ecr:latest
       - docker push 232048837608.dkr.ecr.us-east-1.amazonaws.com/adex-ecr:latest
       - echo Flask image pushed to ECR
+      - printf '[{"name":"your.task.definition.container.name","imageUri":"%s"}]' 232048837608.dkr.ecr.us-east-1.amazonaws.com/adex-ecr:latest > imagedefinitions.json
+
+  artifacts:
+  files: imagedefinitions.json
