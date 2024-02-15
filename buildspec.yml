@@ -1,8 +1,18 @@
 version: 0.1
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Installing dependencies..."
+      - pip install -r requirements.txt
+
   pre_build:
     commands:
+      - echo "Running linting checks..."
+      - pylint src/
+      - echo "Pylint check Passed"
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 232048837608.dkr.ecr.us-east-1.amazonaws.com
       - echo Logged in to Amazon ECR successfully
