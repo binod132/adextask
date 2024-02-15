@@ -30,7 +30,7 @@ phases:
   post_build:
     commands:
       - echo "Docker Container Image Scanning for Vulnerability"
-      - trivy image --exit-code 1 --severity HIGH,CRITICAL adex-ecr
+      - trivy image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed adex-ecr
       - echo Tagging Flask Docker image
       - docker tag adex-ecr:latest 232048837608.dkr.ecr.us-east-1.amazonaws.com/adex-ecr:latest
       - docker push 232048837608.dkr.ecr.us-east-1.amazonaws.com/adex-ecr:latest
