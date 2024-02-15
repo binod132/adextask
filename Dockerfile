@@ -1,5 +1,5 @@
 FROM public.ecr.aws/docker/library/python:3.10-slim
-
+USER ubuntu
 WORKDIR /app
 
 COPY requirements.txt .
