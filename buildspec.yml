@@ -14,12 +14,12 @@ phases:
       - pylint src/
       - echo "Pylint check Passed"
       - echo "Installing Trivy......."
-      - apt-get update
-      - apt-get install wget apt-transport-https gnupg
+      - yum update
+      - yum install wget apt-transport-https gnupg
       - wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | apt-key add -
       - echo deb https://aquasecurity.github.io/trivy-repo/deb bionic main | tee -a /etc/apt/sources.list.d/trivy.list
-      - apt-get update
-      - apt-get install -y trivy
+      - yum update
+      - yum install -y trivy
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 232048837608.dkr.ecr.us-east-1.amazonaws.com
       - echo Logged in to Amazon ECR successfully
