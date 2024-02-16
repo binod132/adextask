@@ -1,6 +1,6 @@
 # Stage 1: Build stage
-#FROM public.ecr.aws/docker/library/python:3.10-slim as builder
-FROM python:alpine3.19 as builder
+FROM public.ecr.aws/docker/library/python:3.10-slim as builder
+#FROM python:alpine3.19 as builder
 
 WORKDIR /app
 
